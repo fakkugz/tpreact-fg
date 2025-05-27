@@ -11,7 +11,7 @@ const Menu = () => {
 
   return (
     <Navbar expand="lg" className="bg-success text-white" variant='dark'>
-      <Container className='d-flex justify-content-between'>
+      <Container fluid className='d-flex justify-content-between px-5'>
         <Navbar.Brand as={NavLink} to="/">Talento Tech Shop</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
