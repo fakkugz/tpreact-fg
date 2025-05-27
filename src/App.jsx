@@ -10,7 +10,7 @@ import Cart from "./pages/Cart"
 const App = () => {
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/tpreact-fg">
       <ShopProvider>
         <div className="d-flex flex-column min-vh-100">
           <Menu />
