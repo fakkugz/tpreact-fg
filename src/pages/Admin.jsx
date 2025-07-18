@@ -119,7 +119,10 @@ const Admin = () => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData),
         })
-            .then(res => res.json())
+            .then(res => {
+                if (!res.ok) throw new Error("Failed to update product");
+                return res.json();
+            })
             .then((product) => {
                 console.log("Producto actualizado (API)", product);
 
@@ -134,8 +137,10 @@ const Admin = () => {
                 toast.success("Product updated successfully");
                 handleClose();
             })
-            .catch(err => console.error("Error al guardar:", err));
-        toast.error("Failed to update product");
+            .catch(err => {
+                console.error("Error al guardar:", err);
+                toast.error("Failed to update product");
+            });
     };
 
 
